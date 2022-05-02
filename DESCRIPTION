@@ -13,3 +13,5 @@ Imports:
     tibble
 Suggests: 
     dplyr
+URL: https://github.com/moodymudskipper/pipediff
+BugReports: https://github.com/moodymudskipper/pipediff/issues
