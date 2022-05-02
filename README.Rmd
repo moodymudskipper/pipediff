@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 
 # pipediff
 
-Show diff between piped steps
+Show diff between piped steps using Brodie Gaslam's {diffobj} package.
 
 ## Installation
 
