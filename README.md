@@ -3,7 +3,7 @@
 
 # pipediff
 
-Show diff between piped steps
+Show diff between piped steps using Brodie Gaslam’s {diffobj} package.
 
 ## Installation
 
@@ -17,8 +17,7 @@ remotes::install_github("moodymudskipper/pipediff")
 
 ``` r
 library(dplyr, warn = FALSE)
-library(pipediff)
-pipediff()
+pipediff::pipediff()
 starwars %>%
   group_by(species) %>%
   summarise(n = n(), mass = mean(mass, na.rm = TRUE)) %>%
@@ -28,4 +27,10 @@ starwars %>%
   nrow()
 ```
 
-![nomnoml](man/figures/pipediff.gif)
+![nomnoml](man/figures/pipediff.gif) `pipediff()` Overrides the pipe
+`%>%` in the caller environment, the newly created pipe displays in the
+viewer the diffs between steps, then self destruct (so `pipediff()`
+works “only once”, a bit like \`debugonce()).
+
+`pipediff(once = FALSE)` makes the change permanent in the caller
+environment until `pipediff::pipereset()` is called.
